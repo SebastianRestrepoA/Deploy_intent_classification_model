@@ -1,18 +1,23 @@
-## ML-Model-Flask-Deployment
-This is a demo project to elaborate how Machine Learn Models are deployed on production using Flask API
+## Intent-Classification-Model-Flask-Heroku
+
+This is a example project to explain how train Machine Learning (ML) Model for intent classification based on text utterances. Moveover, how to deploy on production optimized machine learning model using Flask API and Heroku cloud.
 
 ### Prerequisites
-You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed.
+You must have Scikit Learn, NumPy, Pandas and Flask (for API) installed.
 
 ### Project Structure
-This project has four major parts :
-1. model.py - This contains code fot our Machine Learning model to predict employee salaries absed on trainign data in 'hiring.csv' file.
+This project has two parts :
+1. train_nlp_model.py - This script contains the procedure for the training of the machine learning model. It is divided into five parts: Load text utterances data, Natural Language Processing (stop words, lemmatization, stemming, among others), feature extraction using tf-idf, training and development of the ML model, and save final ML model.  
+
+contains four  code for the machine learning our Machine Learning model to predict employee salaries absed on trainign data in 'hiring.csv' file.
 2. app.py - This contains Flask APIs that receives employee details through GUI or API calls, computes the precited value based on our model and returns it.
 3. request.py - This uses requests module to call APIs already defined in app.py and dispalys the returned value.
 4. templates - This folder contains the HTML template to allow user to enter employee detail and displays the predicted employee salary.
 
 ### Running the project
-1. Ensure that you are in the project home directory. Create the machine learning model by running below command -
+NOTE: Ensure that you are in the project home directory. 
+
+1. Create the machine learning model by running below command -
 ```
 python model.py
 ```
