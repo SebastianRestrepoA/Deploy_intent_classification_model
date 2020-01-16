@@ -35,7 +35,7 @@ Run the beow command to send the request with some pre-popuated values -
 python request.py
 ```
 
-5. Deploy ML model to Heroku
+5. Create heroku account [Here](https://signup.heroku.com/)
 
-⋅⋅⋅[Create a heroku account](https://signup.heroku.com/)
+6. Create heroku [app](https://dashboard.heroku.com/new-app)
 
