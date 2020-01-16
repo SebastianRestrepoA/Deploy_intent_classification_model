@@ -40,6 +40,16 @@ python request.py
 7. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 8. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
 ```
-heroku login
+$ heroku login
 ```
-
+9. Initialize a git repository in a new or existing directory
+```
+$ git init
+$ heroku git:remote -a {your-app-name}
+```
+10. Deploy your application
+```
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
