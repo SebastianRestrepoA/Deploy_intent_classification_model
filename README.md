@@ -28,6 +28,7 @@ pip install gunicorn
 pip install scikit-learn
 pip install request
 pip install pandas
+pip install nltk
 ```
 
 3. Train the ML model by running below command -
