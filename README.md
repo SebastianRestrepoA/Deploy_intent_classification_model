@@ -37,5 +37,5 @@ python request.py
 
 5. Deploy ML model to Heroku
 
-⋅⋅⋅ [Create a heroku account](https://signup.heroku.com/)
+⋅⋅⋅[Create a heroku account](https://signup.heroku.com/)
 
