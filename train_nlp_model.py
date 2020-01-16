@@ -17,16 +17,6 @@ y = encoder.fit_transform(KnowledgeBase["Intent"])  # numerical labels
 intent_names = encoder.classes_
 nfolds = 10
 
-" NATURAL LANGUAJE PROCESSING"
-
-# transform our text information in lowercase
-# KnowledgeBase["Utterance"] = lowercase_transform(KnowledgeBase["Utterance"])
-#
-# # Removing punctuation characters such as: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-# KnowledgeBase["Utterance"] = remove_characters(KnowledgeBase["Utterance"])
-#
-# # Removing stop words from text
-# KnowledgeBase["Utterance"] = remove_stopwords(KnowledgeBase["Utterance"])
 
 " WORD2VECT TRANSFORM AND FEATURE EXTRACTION"
 

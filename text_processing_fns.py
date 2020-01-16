@@ -4,7 +4,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.snowball import SnowballStemmer
 from matplotlib import rcParams
-from utils import *
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import unicodedata
 rcParams.update({'figure.autolayout': True})
 
@@ -137,80 +137,6 @@ def text_stemming(utterance):
     words_stem = [stemmer.stem(word) for word in words]
 
     return ' '.join(words_stem)
-
-
-def extract_bigrams(utterance):
-
-    """ This function produces bigrams list given a utterance.
-
-    :param utterance: string variable.
-
-    :return: list variable with the bigrams obtained from the input utterance.
-
-    """
-    utterance = utterance.split()
-    return list(nltk.bigrams(utterance))
-
-
-def extract_trigrams(utterance):
-
-    """ This function produces trigrams list given a utterance.
-
-    :param utterance: string variable.
-
-    :return: list variable with the trigrams obtained from the input utterance.
-    """
-
-    utterance = utterance.split()
-    return list(nltk.trigrams(utterance))
-
-
-def intent_bigrams_frequency(vKnowledgeBase, intent_name):
-
-    """ This function computes the frequency of bigrams in the knowledge base of specific intent.
-
-
-    :param vKnowledgeBase: pandas series with the utterances of knowledge base.
-           intent_name: string variable with the name of the intent in analysis.
-
-    :return: pandas dataframe with the frequency of the bigrams in the knowledge base.
-
-
-    """
-    b = vKnowledgeBase.apply(lambda x: extract_bigrams(x))
-    b = b.reset_index(drop=True)
-    a = b[0]
-    for i in range(1, len(b)):
-        a = a + b[i]
-
-    fdist = nltk.FreqDist(a)
-    df = pd.DataFrame(fdist.items(), columns=['Bigrams', intent_name])
-
-    return df.sort_values(by=[intent_name], ascending=False).set_index('Bigrams')
-
-
-def intent_trigrams_frequency(vKnowledgeBase, intent_name):
-
-    """ This function computes the frequency of trigrams in the knowledge base of specific intent.
-
-
-    :param vKnowledgeBase: pandas series with the utterances of knowledge base.
-           intent_name: string variable with the name of the intent in analysis.
-
-    :return: pandas dataframe with the frequency of the trigrams in the knowledge base.
-
-
-    """
-
-    tri = vKnowledgeBase.apply(lambda x: extract_trigrams(x))
-    tri = tri.reset_index(drop=True)
-    a = tri[0]
-    for i in range(1, len(tri)):
-        a = a + tri[i]
-
-    fdist = nltk.FreqDist(a)
-    df = pd.DataFrame(fdist.items(), columns=['Trigrams', intent_name])
-    return df.sort_values(by=[intent_name], ascending=False).set_index('Trigrams')
 
 
 def feature_engineering(vUtterances, vectorizer=False, tf_idf=False, ngram=False):
