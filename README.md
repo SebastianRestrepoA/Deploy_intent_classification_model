@@ -13,41 +13,54 @@ This project has two parts :
 4. templates - This folder contains the HTML template to allow user to enter utterance and displays the predicted intent.
 
 ### Running the project
-NOTE: Ensure that you are in the project home directory. 
 
-1. Train the ML model by running below command -
+1. Clone intent classification project in a local directory.
+```
+git clone https://github.com/SebastianRestrepoA/intent_classification_model_flask_heroku.git
+```
+
+2. Create enviroment for run intent classification project using flask and heroku. In your cloned folder run the following commands:
+```
+virtualenv env
+env\Scripts\activate
+pip install flask
+pip install gunicorn
+pip install scikit-learn
+```
+
+3. Train the ML model by running below command -
 ```
 python train_nlp_model.py
 ```
 This would create a serialized version of our ML model, Knowledge base vocabulary, and intent names into the files nlp_model.pkl, knowledgebase_vocabulary.pkl, and intent_names.pkl, respectively.
 
-2. Run app_nlp.py using below command to start Flask API
+3. Run app_nlp.py using below command to start Flask API
 ```
 python app_nlp.py
 ```
 By default, flask will run on port 5000.
 
-3. Navigate to URL http://127.0.0.1:5000/ 
+4. Navigate to URL http://127.0.0.1:5000/ 
 
-4. You can also send direct POST requests to FLask API using Python's inbuilt request module
+5. You can also send direct POST requests to FLask API using Python's inbuilt request module
 Run the beow command to send the request with some pre-popuated values -
 ```
 python request.py
 ```
 
-5. [Create heroku account](https://signup.heroku.com/)
-6. [Create heroku app](https://dashboard.heroku.com/new-app)
-7. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
-8. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+6. If you haven't already, [Create heroku account](https://signup.heroku.com/) or [log in](https://id.heroku.com/login) your heroku account.
+7. If you haven't already, [Create heroku app](https://dashboard.heroku.com/new-app)
+8. If you haven't already, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+9. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
 ```
 $ heroku login
 ```
-9. Initialize a git repository in a new or existing directory
+10. Initialize a git repository in a new or existing directory
 ```
 $ git init
 $ heroku git:remote -a {your-app-name}
 ```
-10. Deploy your application
+11. Deploy your application
 ```
 $ git add .
 $ git commit -am "updating scripts"
