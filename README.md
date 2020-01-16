@@ -50,6 +50,6 @@ $ heroku git:remote -a {your-app-name}
 10. Deploy your application
 ```
 $ git add .
-$ git commit -am "make it better"
+$ git commit -am "updating scripts"
 $ git push heroku master
 ```
