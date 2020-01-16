@@ -7,7 +7,7 @@ You must have Scikit Learn, NumPy, Pandas and Flask installed.
 
 ### Project Structure
 
-1. train_nlp_model.py - This script contains the procedure for the training of the machine learning model. It is divided into five parts: Load text utterances data, Natural Language Processing (stop words, lemmatization, stemming, among others), feature extraction using tf-idf, training and development of the ML model, and save final ML model.   The training data is located in  'knowledgebase.xlsx' file.
+1. train_nlp_model.py - This script contains the procedure for the training of the machine learning model. It is divided into five parts: Load text utterances data, Natural Language Processing (stop words, lemmatization, stemming, among others), feature extraction using tf-idf, training and development of the ML model, and save final ML model.   The training data is located in  'KnowledgeBase.xlsx' file.
 2. app_nlp.py - This contains Flask APIs that receives utterance through GUI or API calls. Here, it is used nlp model and vocabulary saved in train_nlp_model.py 
 3. request.py - This uses requests module to call APIs already defined in app_nlp.py and displays the returned value.
 4. templates - This folder contains the HTML template to allow user to enter utterance and displays the predicted intent.
