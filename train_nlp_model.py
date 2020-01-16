@@ -1,14 +1,10 @@
-import os
 import warnings
-import numpy as np
 from text_processing_fns import *
-warnings.filterwarnings("ignore")
 from classifiers import *
-from sklearn.model_selection import StratifiedKFold
 import pandas as pd
 import pickle
-from sklearn.metrics import classification_report
-from sklearn.metrics import f1_score
+warnings.filterwarnings("ignore")
+
 
 " LOAD DATA BASE"
 vPathKnowledgeBase = './KnowledgeBase.xlsx'
@@ -37,12 +33,14 @@ nfolds = 10
 features_matrix = feature_engineering(KnowledgeBase["Utterance"], tf_idf=True)
 
 
-" MODEL DEVELOPMENT"
+" MODEL TRAINING AND DEVELOPMENT"
 
 x = features_matrix['TF-IDF']['matrix']
 vocabulary_object = features_matrix['TF-IDF']['object']
 svm_model = fn_search_best_svm_classifier(x, y, nfolds, 'TF-IDF', display_results=True)
 
+
+"SAVE FINAL MODEL"
 pickle.dump(svm_model, open('nlp_model.pkl', 'wb'))
 pickle.dump(vocabulary_object, open('knowledgebase_vocabulary.pkl', 'wb'))
 pickle.dump(intent_names, open('intent_names.pkl', 'wb'))
