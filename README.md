@@ -35,7 +35,11 @@ Run the beow command to send the request with some pre-popuated values -
 python request.py
 ```
 
-5. Create heroku account [Here](https://signup.heroku.com/)
-
-6. Create heroku [app](https://dashboard.heroku.com/new-app)
+5. [Create heroku account](https://signup.heroku.com/)
+6. [Create heroku app](https://dashboard.heroku.com/new-app)
+7. Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+8. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+```
+heroku login
+```
 
