@@ -1,9 +1,9 @@
 ## Intent-Classification-Model-Flask-Heroku
 
-This is a example project to explain how train Machine Learning (ML) Model for intent classification based on text utterances. Moveover, how to deploy on production optimized machine learning model using Flask API and Heroku cloud.
+This is a example project to explain how to train Machine Learning (ML) Model for intent classification based on text utterances. Moveover, how to deploy on production optimized machine learning model using Flask API and Heroku cloud.
 
 ### Prerequisites
-You must have Scikit Learn, NumPy, Pandas and Flask (for API) installed.
+You must have Scikit Learn, NumPy, Pandas and Flask installed.
 
 ### Project Structure
 This project has two parts :
