@@ -2,6 +2,7 @@ import warnings
 from text_processing_fns import *
 from classifiers import *
 import pandas as pd
+from sklearn import preprocessing
 import pickle
 warnings.filterwarnings("ignore")
 
@@ -15,8 +16,6 @@ KnowledgeBase = pd.read_excel(vPathKnowledgeBase)
 encoder = preprocessing.LabelEncoder()
 y = encoder.fit_transform(KnowledgeBase["Intent"])  # numerical labels
 intent_names = encoder.classes_
-nfolds = 10
-
 
 " WORD2VECT TRANSFORM AND FEATURE EXTRACTION"
 
@@ -24,7 +23,7 @@ features_matrix = feature_engineering(KnowledgeBase["Utterance"], tf_idf=True)
 
 
 " MODEL TRAINING AND DEVELOPMENT"
-
+nfolds = 10
 x = features_matrix['TF-IDF']['matrix']
 vocabulary_object = features_matrix['TF-IDF']['object']
 svm_model = fn_search_best_svm_classifier(x, y, nfolds, 'TF-IDF', display_results=True)
