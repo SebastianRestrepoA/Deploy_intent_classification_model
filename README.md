@@ -47,24 +47,20 @@ By default, flask will run on port 5000.
 
 5. Navigate to URL http://127.0.0.1:5000/ 
 
-6. Heroku
 
-``` 
-deactivate
-```
-7. If you haven't already, [Create heroku account](https://signup.heroku.com/) or [log in](https://id.heroku.com/login) your heroku account.
-8. If you haven't already, [Create heroku app](https://dashboard.heroku.com/new-app)
-9. If you haven't already, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
-10. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+6. If you haven't already, [Create heroku account](https://signup.heroku.com/) or [log in](https://id.heroku.com/login) your heroku account.
+7. If you haven't already, [Create heroku app](https://dashboard.heroku.com/new-app)
+8. If you haven't already, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+9. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key. Ensure that you are in  project local directory. 
 ```
 $ heroku login
 ```
-11. Initialize a git repository in a new or existing directory
+10. Initialize a git repository in a new or existing directory
 ```
 $ git init
 $ heroku git:remote -a {your-app-name}
 ```
-12. Deploy your application
+11. Deploy your application
 ```
 $ git add .
 $ git commit -am "updating scripts"
