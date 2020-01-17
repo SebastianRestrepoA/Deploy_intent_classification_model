@@ -29,6 +29,8 @@ pip install scikit-learn
 pip install request
 pip install pandas
 pip install nltk
+pip install matplotlib
+pip install xlrd
 ```
 
 3. Train the ML model by running below command -
@@ -45,12 +47,11 @@ By default, flask will run on port 5000.
 
 5. Navigate to URL http://127.0.0.1:5000/ 
 
-6. You can also send direct POST requests to FLask API using Python's inbuilt request module
-Run the beow command to send the request with some pre-popuated values -
-```
-python request.py
-```
+6. Heroku
 
+``` 
+deactivate
+```
 7. If you haven't already, [Create heroku account](https://signup.heroku.com/) or [log in](https://id.heroku.com/login) your heroku account.
 8. If you haven't already, [Create heroku app](https://dashboard.heroku.com/new-app)
 9. If you haven't already, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
