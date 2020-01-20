@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 
+
 app = Flask(__name__)
 model = pickle.load(open('nlp_model.pkl', 'rb'))
 vocabulary = pickle.load(open('knowledgebase_vocabulary.pkl', 'rb'))
